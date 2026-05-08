@@ -1,47 +1,28 @@
-/* ================================================
-   LEXCODE SNIPET — code.css  (Code Preview Page)
-   Dark Professional — matches landing page theme
-   ================================================ */
-
-/* -----------------------------------------------
-   CSS Custom Properties
------------------------------------------------ */
 :root {
-    /* Core backgrounds */
     --bg-base:        #0d0d0d;
     --bg-raised:      #111111;
     --bg-card:        #171717;
     --bg-glass:       rgba(20, 20, 20, 0.72);
     --bg-toolbar:     #141414;
-    --bg-code:        rgba(8, 8, 10, 0.60);        /* semi-transparent code bg */
+    --bg-code:        rgba(8, 8, 10, 0.60);
     --bg-linenums:    rgba(0, 0, 0, 0.30);
     --bg-statusbar:   #101012;
-
-    /* Borders */
     --border:         rgba(255, 255, 255, 0.07);
     --border-soft:    rgba(255, 255, 255, 0.10);
     --border-mid:     rgba(255, 255, 255, 0.14);
     --border-accent:  rgba(59, 130, 246, 0.30);
-
-    /* Text */
     --txt:            #efefef;
     --txt-2:          #a0a0a0;
     --txt-3:          #5c5c5c;
     --txt-4:          #333333;
-
-    /* Accent */
     --blue:           #3b82f6;
     --blue-bright:    #60a5fa;
     --blue-glow:      rgba(59, 130, 246, 0.18);
     --blue-glow-sm:   rgba(59, 130, 246, 0.10);
-
-    /* Toast */
     --toast-info:     #3b82f6;
     --toast-success:  #22c55e;
     --toast-error:    #ef4444;
     --toast-warn:     #f59e0b;
-
-    /* Syntax — VSCode Dark+ / GitHub Dark palette */
     --syn-kw:         #569cd6;   /* keywords */
     --syn-kw2:        #c586c0;   /* import / export / from */
     --syn-str:        #ce9178;   /* strings */
@@ -56,30 +37,19 @@
     --syn-prop:       #9cdcfe;   /* object properties */
     --syn-rx:         #d16969;   /* regex */
     --syn-dec:        #c586c0;   /* decorator */
-
-    /* Radii */
     --r-sm:    6px;
     --r-md:    10px;
     --r-lg:    16px;
     --r-xl:    22px;
     --r-pill:  9999px;
-
-    /* Transitions */
     --t-fast:   140ms ease;
     --t-base:   220ms ease;
     --t-smooth: 350ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    /* Navbar height */
     --nav-h: 64px;
-
-    /* Fonts */
     --sans: 'DM Sans', system-ui, sans-serif;
     --mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
 }
 
-/* -----------------------------------------------
-   Reset & Base
------------------------------------------------ */
 *,
 *::before,
 *::after {
@@ -117,9 +87,6 @@ img          { display: block; max-width: 100%; }
     padding: 0 24px;
 }
 
-/* -----------------------------------------------
-   Animations
------------------------------------------------ */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(18px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -146,9 +113,6 @@ img          { display: block; max-width: 100%; }
     to   { width: 0%; }
 }
 
-/* -----------------------------------------------
-   TOAST SYSTEM
------------------------------------------------ */
 .toast-container {
     position: fixed;
     top: calc(var(--nav-h) + 12px);
@@ -271,9 +235,6 @@ img          { display: block; max-width: 100%; }
     font-variation-settings: 'FILL' 0, 'wght' 400;
 }
 
-/* -----------------------------------------------
-   NAVBAR
------------------------------------------------ */
 .navbar {
     position: fixed;
     inset-inline: 0;
@@ -403,18 +364,12 @@ img          { display: block; max-width: 100%; }
     border-left-color: var(--blue);
 }
 
-/* -----------------------------------------------
-   PAGE MAIN
------------------------------------------------ */
 .page-main {
     padding-top: calc(var(--nav-h) + 40px);
     padding-bottom: 80px;
     animation: fadeUp 0.48s ease both;
 }
 
-/* -----------------------------------------------
-   BREADCRUMB
------------------------------------------------ */
 .breadcrumb {
     display: flex;
     align-items: center;
@@ -440,9 +395,6 @@ a.bc-item:hover { color: var(--txt-2); }
 
 .bc-current { color: var(--txt-2); }
 
-/* -----------------------------------------------
-   CODE INFO HEADER
------------------------------------------------ */
 .code-info {
     display: flex;
     align-items: flex-start;
@@ -588,9 +540,6 @@ a.bc-item:hover { color: var(--txt-2); }
 }
 .stat-pill .stat-unit { color: var(--txt-4); }
 
-/* -----------------------------------------------
-   CODE PREVIEW SHELL
------------------------------------------------ */
 .preview-shell {
     position: relative;
     border: 1px solid var(--border-soft);
@@ -749,9 +698,8 @@ a.bc-item:hover { color: var(--txt-2); }
 .code-scroll::-webkit-scrollbar-thumb  { background: rgba(255,255,255,0.10); border-radius: 3px; }
 .code-scroll::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.18); }
 
-/* Vertical scroll sync on line-nums */
 .line-nums {
-    overflow-y: hidden;  /* controlled by JS */
+    overflow-y: hidden;
 }
 
 .code-pre {
@@ -770,7 +718,6 @@ a.bc-item:hover { color: var(--txt-2); }
     tab-size: 2;
 }
 
-/* ---- Status bar ---- */
 .status-bar {
     display: flex;
     align-items: center;
@@ -802,9 +749,6 @@ a.bc-item:hover { color: var(--txt-2); }
 .sb-ok { color: #22c55e; }
 .sb-brand { color: var(--blue); opacity: 0.7; }
 
-/* -----------------------------------------------
-   ACTION ROW
------------------------------------------------ */
 .action-row {
     display: flex;
     align-items: center;
@@ -853,9 +797,6 @@ a.bc-item:hover { color: var(--txt-2); }
 }
 .action-btn.back:hover .material-symbols-outlined { transform: translateX(-3px); }
 
-/* -----------------------------------------------
-   SYNTAX HIGHLIGHT CLASSES (VSCode Dark+)
------------------------------------------------ */
 /* keywords: const, let, var, if, for, return… */
 .kw  { color: var(--syn-kw); }
 /* import / export / from / as */
@@ -885,9 +826,6 @@ a.bc-item:hover { color: var(--txt-2); }
 /* regex */
 .rx  { color: var(--syn-rx); }
 
-/* -----------------------------------------------
-   FOOTER
------------------------------------------------ */
 .footer {
     border-top: 1px solid var(--border);
     background: var(--bg-raised);
@@ -962,9 +900,6 @@ a.bc-item:hover { color: var(--txt-2); }
     animation: glow-pulse 2s ease-in-out infinite;
 }
 
-/* -----------------------------------------------
-   RESPONSIVE
------------------------------------------------ */
 @media (max-width: 900px) {
     .footer-top { grid-template-columns: 1fr 1fr; }
     .footer-brand { grid-column: 1 / -1; }
