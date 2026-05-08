@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Code Preview — LexCode Snipet">
+    <title>Code Preview — LexCode Snipet</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0">
+
+    <link rel="stylesheet" href="/code/src/code.css">
+</head>
+<body>
+    <div class="toast-container" id="toastContainer" role="region" aria-live="polite"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../../index.html" class="nav-logo">
+                <span class="material-symbols-outlined logo-icon">code</span>
+                <span class="logo-text">
+                    <span class="logo-lex">LexCode</span><span class="logo-snipet"> Snipet</span>
+                </span>
+            </a>
+
+            <ul class="nav-links" role="list">
+                <li><a href="../../index.html" class="nav-link">Home</a></li>
+                <li><a href="/explore/" class="nav-link active">Code</a></li>
+                <li><a href="https://wa.me/6281239075413" class="nav-link">Contact</a></li>
+                <li><a href="https://api.lexcode.biz.id" class="nav-link">API's</a></li>
+            </ul>
+
+            <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+                <span class="b-line"></span>
+                <span class="b-line"></span>
+                <span class="b-line"></span>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+            <a href="../../index.html" class="m-link">Home</a>
+            <a href="/explore/" class="m-link active">Code</a>
+            <a href="https://wa.me/6281239075413" class="m-link">Contact</a>
+            <a href="https://api.lexcode.biz.id" class="m-link">API's</a>
+        </div>
+    </nav>
+
+    <main class="page-main">
+        <div class="container">
+
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../../index.html" class="bc-item">Home</a>
+                <span class="material-symbols-outlined bc-sep" aria-hidden="true">chevron_right</span>
+                <a href="/explore/" class="bc-item">Code</a>
+                <span class="material-symbols-outlined bc-sep" aria-hidden="true">chevron_right</span>
+                <span class="bc-item bc-current" id="bcTitle">Loading...</span>
+            </nav>
+
+            <header class="code-info">
+
+                <div class="info-main">
+                    <div class="file-icon-box" id="fileIconBox">
+                        <span class="material-symbols-outlined" id="fileIconEl">draft</span>
+                    </div>
+
+                    <div class="info-body">
+                        <div class="info-row-top">
+                            <div class="filename-chip" id="filenameChip">
+                                <span class="material-symbols-outlined chip-icon" id="chipFileIcon">description</span>
+                                <span id="filenameText">savetube.js</span>
+                            </div>
+                            <span class="badge badge-lang" id="langBadge">JS</span>
+                            <span class="badge badge-update" id="updateBadge">
+                                <span class="material-symbols-outlined">update</span>
+                                <span id="updateText">—</span>
+                            </span>
+                        </div>
+
+                        <h1 class="snippet-title" id="snippetTitle">Loading...</h1>
+                        <p class="snippet-desc" id="snippetDesc">—</p>
+                    </div>
+                </div>
+
+                <div class="info-stats" id="infoStats">
+                    <div class="stat-pill">
+                        <span class="material-symbols-outlined">format_list_numbered</span>
+                        <span id="statLines">—</span>
+                        <span class="stat-unit">lines</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="material-symbols-outlined">data_array</span>
+                        <span id="statChars">—</span>
+                        <span class="stat-unit">chars</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="preview-shell">
+                <div class="preview-toolbar">
+                    <div class="tb-left">
+                        <span class="mac-dot red"    aria-hidden="true"></span>
+                        <span class="mac-dot yellow" aria-hidden="true"></span>
+                        <span class="mac-dot green"  aria-hidden="true"></span>
+                        <span class="tb-filename" id="tbFilename" aria-hidden="true">savetube.js</span>
+                    </div>
+                    <div class="tb-right">
+                        <span class="lang-tag" id="langTag">JavaScript</span>
+                        <button class="copy-btn" id="copyBtn" aria-label="Copy code">
+                            <span class="material-symbols-outlined" id="copyIcon">content_copy</span>
+                            <span id="copyLabel">Copy</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="code-block-wrap">
+                    <div class="line-nums" id="lineNums" aria-hidden="true"></div>
+                    <div class="code-scroll">
+                        <pre class="code-pre"><code id="codeEl"></code></pre>
+                    </div>
+                </div>
+
+                <div class="status-bar">
+                    <div class="sb-left">
+                        <span class="sb-item">
+                            <span class="material-symbols-outlined sb-ok">check_circle</span>
+                            No errors
+                        </span>
+                        <span class="sb-item" id="sbEncoding">UTF-8</span>
+                    </div>
+                    <div class="sb-right">
+                        <span class="sb-item">
+                            <span class="material-symbols-outlined">integration_instructions</span>
+                            <span id="sbLang">JavaScript</span>
+                        </span>
+                        <span class="sb-item sb-brand">LexCode Snipet</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-row">
+                <a href="/explore/" class="action-btn back">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    Back to Snippets
+                </a>
+                <a href="/explore/" class="action-btn browse">
+                    <span class="material-symbols-outlined">grid_view</span>
+                    Browse All
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <span class="material-symbols-outlined logo-icon">code</span>
+                        <span class="logo-text">
+                            <span class="logo-lex">LexCode</span><span class="logo-snipet"> Snipet</span>
+                        </span>
+                    </a>
+                    <p class="footer-tag">Built for developers who ship faster.</p>
+                    <p class="footer-about">
+                        Platform snippet open-source untuk mempercepat<br>pengembangan web dan mobile modern.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-list">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="#">Code</a></li>
+                        <li><a href="https://kyynns.vercel.app">Portofolio</a></li>
+                        <li><a href="https://api.lexcode.biz.id">API's</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact Me</h4>
+                    <ul class="footer-list">
+                        <li><a href="https://t.me/kyynxz31">Telegram</a></li>
+                        <li><a href="https://wa.me/6281239075413">WhatsApp</a></li>
+                        <li><a href="https://whatsapp.com/channel/0029VbC2uly2f3EEsyAGna1d">Info Saluran</a></li>
+                        <li><a href="https://github.com/RIFKIror">Github</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 LexCode Snipet. All rights reserved.</p>
+                <p>Builds with <span class="heart">&#9829;</span> for developers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/code/src/code.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jelajahi koleksi snippet kode premium — LexCode Snipet">
+    <title>Code Snippets — LexCode Snipet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0">
+
+    <link rel="stylesheet" href="snippet.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">
+                <span class="material-symbols-outlined nav-logo-icon">code</span>
+                <span class="nav-logo-text">
+                    <span class="logo-lex">LexCode</span><span class="logo-snipet"> Snipet</span>
+                </span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../../index.html" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link active">Code</a></li>
+                <li><a href="https://wa.me/6281239075413" class="nav-link">Contact</a></li>
+                <li><a href="https://api.lexcode.biz.id" class="nav-link">API's</a></li>
+            </ul>
+            <button class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+            <a href="../../index.html" class="mobile-link">Home</a>
+            <a href="#" class="mobile-link active">Code</a>
+            <a href="https://wa.me/6281239075413" class="mobile-link">Contact</a>
+            <a href="https://api.lexcode.biz.id" class="mobile-link">API's</a>
+        </div>
+    </nav>
+
+    <main class="snippet-main">
+        <header class="page-header">
+            <div class="header-bg" aria-hidden="true">
+                <div class="bg-grid"></div>
+                <div class="bg-glow"></div>
+            </div>
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-badge">
+                        <span class="material-symbols-outlined">folder_code</span>
+                        Code Library
+                    </div>
+                    <h1 class="page-title">
+                        <span class="title-lex">LexCode</span>
+                        <span class="title-snipet"> Snipet</span>
+                        <span class="title-icon material-symbols-outlined">code</span>
+                    </h1>
+                    <p class="page-subtitle">
+                        Jelajahi kode, bangun project profesional mulai dari sini.
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <section class="search-section">
+            <div class="container">
+                <div class="terminal-search-wrap">
+                    <div class="terminal-toolbar" aria-hidden="true">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                        <span class="terminal-label">~/lexcode/Snipet</span>
+                    </div>
+
+                    <div class="terminal-input-row">
+                        <div class="terminal-icons" aria-hidden="true">
+                            <span class="material-symbols-outlined t-icon">code</span>
+                            <span class="material-symbols-outlined t-icon">android</span>
+                        </div>
+
+                        <span class="terminal-prompt" aria-hidden="true">~/lexcode/Snipet $</span>
+
+                        <input
+                            type="text"
+                            class="terminal-input"
+                            id="searchInput"
+                            placeholder="search snippet..."
+                            autocomplete="off"
+                            spellcheck="false"
+                            aria-label="Cari snippet"
+                        >
+
+                        <button class="search-btn" id="searchBtn" aria-label="Cari">
+                            <span class="material-symbols-outlined">search</span>
+                        </button>
+                    </div>
+
+                    <div class="filter-tags" role="group" aria-label="Filter kategori">
+                        <button class="filter-tag active" data-filter="all">All</button>
+                        <button class="filter-tag" data-filter="tools">Tools</button>
+                        <button class="filter-tag" data-filter="search">Search</button>
+                        <button class="filter-tag" data-filter="ai">AI</button>
+                        <button class="filter-tag" data-filter="scrape">Scrape</button>
+                        <button class="filter-tag" data-filter="dwn">Downloader</button>
+                        <button class="filter-tag" data-filter="stalker">Stalker</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cards-section">
+            <div class="container">
+                <div class="result-meta">
+                    <span class="result-count" id="resultCount">6 snippets found</span>
+                    <div class="view-controls" aria-label="Tampilan">
+                        <button class="view-btn active" data-view="grid" aria-label="Grid view">
+                            <span class="material-symbols-outlined">grid_view</span>
+                        </button>
+                        <button class="view-btn" data-view="list" aria-label="List view">
+                            <span class="material-symbols-outlined">view_list</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cards-grid" id="cardsGrid">
+                    <article class="snippet-card" data-lang="search" data-id="yt_w8cgbl">
+                        <div class="card-header">
+                            <div class="card-lang-badge javascript">
+                                <span class="material-symbols-outlined">javascript</span>
+                                JavaScript
+                            </div>
+                            <span class="card-date">18 April 2026</span>
+                        </div>
+                        <h3 class="card-title">YouTube Search</h3>
+                        <p class="card-desc">
+                            Cari vidio YouTube berdasarkan query pencarian
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">JSON</span>
+                            <span class="tag">Search</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-meta">
+                                <span class="material-symbols-outlined meta-icon">schedule</span>
+                                <span>19.05 wib</span>
+                            </div>
+                            <a href="/code/ytsearch/?id=yt_w8cgbl" class="card-btn">
+                                <span class="material-symbols-outlined">open_in_new</span>
+                                Source Code
+                            </a>
+                        </div>
+                    </article>
+                    <article class="snippet-card" data-lang="stalker" data-id="gh_kvk5qc">
+                        <div class="card-header">
+                            <div class="card-lang-badge javascript">
+                                <span class="material-symbols-outlined">javascript</span>
+                                JavaScript
+                            </div>
+                            <span class="card-date">24 April 2025</span>
+                        </div>
+                        <h3 class="card-title">Github Stalker</h3>
+                        <p class="card-desc">
+                            Mencari informasi akun github seseorang berdasarkan username github
+                       </p>
+                        <div class="card-tags">
+                            <span class="tag">JSON</span>
+                            <span class="tag">Stalker</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-meta">
+                                <span class="material-symbols-outlined meta-icon">schedule</span>
+                                <span>15.07 wib</span>
+                            </div>
+                            <a href="/code/github-stalk/?id=gh_kvk5qc" class="card-btn">
+                                <span class="material-symbols-outlined">open_in_new</span>
+                                Source Code
+                            </a>
+                        </div>
+                    </article>
+                    <article class="snippet-card" data-lang="dwn" data-id="yt_dl_93GhK2">
+                        <div class="card-header">
+                            <div class="card-lang-badge javascript">
+                                <span class="material-symbols-outlined">javascript</span>
+                                JavaScript
+                            </div>
+                            <span class="card-date">24 Februari 2026</span>
+                        </div>
+                        <h3 class="card-title">Savetube Downloader</h3>
+                        <p class="card-desc">
+                            Download Vidio YouTube menggunakan savetube
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">JSON</span>
+                            <span class="tag">Downloader</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-meta">
+                                <span class="material-symbols-outlined meta-icon">schedule</span>
+                                <span>07.50 wib</span>
+                            </div>
+                            <a href="/code/savetube-dl/?id=yt_dl_93GhK2" class="card-btn">
+                                <span class="material-symbols-outlined">open_in_new</span>
+                                Source Code
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="empty-state" id="emptyState" hidden>
+                    <span class="material-symbols-outlined empty-icon">search_off</span>
+                    <h3 class="empty-title">Upps, No snippets found</h3>
+                    <p class="empty-desc">Coba kata kunci lain atau pilih filter yang berbeda.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <a href="/index.html" class="nav-logo">
+                    <span class="material-symbols-outlined nav-logo-icon">code</span>
+                    <span class="nav-logo-text">
+                        <span class="logo-lex">LexCode</span><span class="logo-snipet"> Snipet</span>
+                    </span>
+                </a>
+                <p class="footer-copy">&copy; 2025 LexCode Snipet. Built for developers who ship faster.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
