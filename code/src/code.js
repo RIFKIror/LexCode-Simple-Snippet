@@ -244,6 +244,120 @@ async function savetube(link, quality = "720") {
   const res = await savetube('https://youtu.be/NLb6h_7NAW0?si=WXx02PumG_4GUe6x')
   console.log(res)
 })()`
+    },
+
+        4: {
+        id: "sv_2zipLzS",
+        slug: "saveweb2zip",
+        title: "Save Web To Zip",
+        desc: "Download 1 website utuh jadi bentuk .zip",
+        filename: "saveweb2zip.js",
+        lang: "JavaScript",
+        langShort: "JS",
+        langType: "javascript",
+        icon: "download",
+        updated: "10 Mei 2026",
+        code: `import axios from "axios";
+
+const client = axios.create({
+  baseURL: "https://copier.saveweb2zip.com/api",
+  timeout: 20000,
+  headers: {
+    accept: "*/*",
+    "content-type": "application/json",
+    origin: "https://saveweb2zip.com",
+    referer: "https://saveweb2zip.com/",
+    "user-agent": "Mozilla/5.0 (Linux; Android 14; SM-A225F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36",
+    "accept-language": "en-US,en;q=0.9",
+    "cache-control": "no-cache",
+    pragma: "no-cache",
+    "sec-ch-ua":
+      "\\"Chromium\\";v=\\"137\\", \\"Not/A)Brand\\";v=\\"24\\", \\"Google Chrome\\";v=\\"137\\"",
+    "sec-ch-ua-mobile": "?1",
+    "sec-ch-ua-platform": "\\"Android\\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site"
+  }
+});
+
+async function saveweb2zip(url, config = {}) {
+  try {
+    if (!url) {
+      throw new Error("Full URL is required.");
+    }
+
+    if (!/^https:\\/\\//i.test(url)) {
+      throw new Error("URL must use https://");
+    }
+
+    const payload = {
+      url,
+      renameAssets: config.renameAssets ?? false,
+      saveStructure: config.saveStructure ?? false,
+      alternativeAlgorithm: config.alternativeAlgorithm ?? false,
+      mobileVersion: config.mobileVersion ?? false
+    };
+
+    const { data: start } = await client.post("/copySite", payload);
+
+    if (!start?.md5) {
+      throw new Error("Failed to initialize cloning process.");
+    }
+
+    let progressData = null;
+
+    while (true) {
+      const { data } = await client.get(
+        \`/getStatus/\${start.md5}\`
+      );
+
+      progressData = data;
+
+      if (data?.isFinished) {
+        break;
+      }
+
+      await new Promise(resolve =>
+        setTimeout(resolve, 1500)
+      );
+    }
+
+    return {
+      success: true,
+      metadata: {
+        target: url,
+        task: progressData.md5,
+        files: progressData.copiedFilesAmount || 0,
+        finished: progressData.isFinished || false
+      },
+      result: {
+        download:
+          \`https://copier.saveweb2zip.com/api/downloadArchive/\${progressData.md5}\`
+      },
+      status: {
+        error_code: progressData.errorCode || null,
+        error_message: progressData.errorText || null
+      }
+    };
+  } catch (err) {
+    return {
+      success: false,
+      error: err.message
+    };
+  }
+}
+
+(async () => {
+  const result = await saveweb2zip(
+    "https://kynns.vercel.app",
+    {
+      renameAssets: true,
+      saveStructure: true
+    }
+  );
+  console.log(JSON.stringify(result, null, 2));
+})();`
     }
 };
 
